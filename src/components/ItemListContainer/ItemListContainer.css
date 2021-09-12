@@ -1,0 +1,14 @@
+.Title{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.Title h3{
+    font-size: 3.2rem;
+    font-weight: bold;
+}
+
+/* .Title2{
+    background: green;
+} */

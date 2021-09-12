@@ -1,17 +1,33 @@
-
+// Librerias
 import React from 'react'
+import {
+  BrowserRouter  as Router,
+   Switch,
+   Route
+} from 'react-router-dom'
 
+// Estilos
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Componentes
+import Layout from './components/Layout/Layout';
 
-import Header from './components/Header.js'
-import ItemListContainer from './components/ItemListContainer.js'
+//Pages
+import Home from './pages/Home/Home.';
+
+
 function App() {
   return (
     <>
-      <Header />
-      <ItemListContainer greetings="Bienvenido a mi E-COMERCE"/>
+      <Router>
+        <Layout>
+          <Switch>
+            <Route  exact path="/" component={Home}/>
+          </Switch>
+        </Layout>
+      </Router>
+      
     </>
   );
 }

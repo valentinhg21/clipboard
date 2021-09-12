@@ -1,0 +1,8 @@
+.Col__item{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+

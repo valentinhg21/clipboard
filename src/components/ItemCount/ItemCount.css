@@ -1,0 +1,12 @@
+.Button button{
+    
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-tertiary);
+}
+
+.Quantity__text{
+    
+    margin: 0;
+}

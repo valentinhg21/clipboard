@@ -4,4 +4,26 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+
 }
+body{
+  /* background: gray !important; */
+  width: 100% !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+:root{
+  --primary-color: #8338ec;
+  --background-color-primary: #fff;
+  --background-color-secondary: rgb(131, 131, 131);
+  --secondary-color: #fff;
+  --color-text: rgb(216, 216, 216);
+  --color-text-secondary: black;
+  --color-text-tertiary: rgb(88, 88, 88);
+  --color-text-header: #fff;
+  
+}
+

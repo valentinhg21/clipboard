@@ -1,9 +1,14 @@
 import React from 'react'
-import './styles/CartWidget.css'
+import '../CartWidget/CartWidget.css'
+
+
 const CartWidget = () => {
     return (
-        <div>
+        <div className="Cart">
             <i className="fas fa-shopping-cart"></i>
+            <div className="Cart_count">
+                <p>0</p>
+            </div>
         </div>
     )
 }

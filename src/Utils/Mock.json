@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+        "productName": "Dell",
+        "productModel": "Inspiron 15.6",
+        "productDescription": "",
+        "price": 34000,
+        "productPicture": "http://www.resinformatica.com.ar/Temp/App_WebSite/App_PictureFiles/Items/4346_800.jpg",
+        "productType": "Notebooks",
+        "stock": 5
+    },
+    {
+        "id": 2,
+        "productName": "Dell",
+        "productModel": "XPS 13",
+        "productDescription": "",
+        "price": 50000,
+        "productPicture": "https://http2.mlstatic.com/D_NQ_NP_822715-MLA43352341253_092020-O.webp",
+        "productType": "Notebooks",
+        "stock": 4
+    },
+    {
+        "id": 3,
+        "productName": "Dell",
+        "productModel": "Chromebook 11",
+        "productDescription": "",
+        "price": 45000,
+        "productPicture": "https://images.fravega.com/f300/990ef772a17f3eefb66e41f313e11f00.jpg.webp",
+        "productType": "Notebooks",
+        "stock": 3
+    },
+    {
+        "id": 4,
+        "productName": "Dell",
+        "productModel": "Inspiron 13",
+        "productDescription": "",
+        "price": 46000,
+        "productPicture": "https://m.media-amazon.com/images/I/7150CdXadxL._AC_SL1500_.jpg",
+        "productType": "Notebooks",
+        "stock": 2
+        
+    }
+]

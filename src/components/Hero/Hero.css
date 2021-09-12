@@ -1,0 +1,61 @@
+.Hero{
+    width: 100%;
+    position: relative;
+    background: red;
+}
+
+.Image__slider{
+    height: 1220px;
+    height: 790px;
+    object-fit: cover;
+}
+
+.Caption{
+    height: 100%;
+}
+
+.Caption__content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    height: 100%;
+    text-align: left;
+}
+
+.Caption__content h3{
+    font-weight: bold;
+    font-size: 3.2rem;
+    letter-spacing: .5px;
+    margin-top: .5rem;
+}
+
+.Caption__content p{
+    font-size: 1rem;
+    letter-spacing: .5px;
+    margin-top: .5rem;
+}
+
+.Link__slider{
+    margin-top: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 40px;
+    border-radius: 40px;
+    background: var(--secondary-color);
+    text-decoration: none;
+    color: black;
+    transition: .25s all ease-in-out;
+}
+
+.Link__slider:focus{
+    background: var(--primary-color);
+    color: var(--color-text);
+}
+
+.Link__slider:hover{
+    background: var(--primary-color);
+    color: var(--color-text);
+}

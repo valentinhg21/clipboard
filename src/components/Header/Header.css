@@ -1,0 +1,100 @@
+.Navbar{
+    
+    position: sticky !important; 
+    top: 0; 
+    background-color: var(--primary-color);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 1; 
+    overflow: hidden; 
+    width: 100%;
+}
+
+.NavbarBrand{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+.dropdown-menu{
+    background: transparent !important;
+    border: none;
+    color: var(--color-text) !important;
+}
+
+.NavDropdownHeader{
+    color: var(--color-text-header) !important;
+}
+.NavDropdownItem{
+    color: var(--color-text) !important;
+    padding-left: 1.5rem !important;
+}
+
+/* Toogle */
+.navbar-toggler{
+    font-size: 1.2rem;
+    border: none;
+    padding-left: 0;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+.Container__CartWdiget{
+    position: relative;
+    width: 45%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-collapse{
+    justify-content: flex-end;
+}
+
+.CartWidget__desktop{
+    display: none;
+}
+
+/* Tablets en horizonal y escritorios normales */
+@media (min-width: 768px) and (max-width: 1199px) { 
+    .Container__CartWdiget{
+        width: 75%;
+    }
+}
+
+/* Móviles en horizontal o tablets en vertical */
+@media (max-width: 767px) { 
+    .Container__CartWdiget{
+        width: 56%;
+    }
+
+}
+/* Móviles en vertical */
+@media (max-width: 480px) { 
+    .Container__CartWdiget{
+        width: 34%;
+    }
+}
+/* EXTRA LARGE */
+@media (min-width: 1200px) { 
+    .Navbar{
+        overflow:visible;
+    }
+    .dropdown-menu{
+        background: var(--background-color-primary) !important;
+    }
+    .NavDropdownHeader{
+        color: var(--color-text-secondary) !important;
+    }
+    .NavDropdownItem{
+        color: var(--color-text-tertiary) !important;
+        padding-left: 1.5rem !important;
+    }
+    .Container__CartWdiget{
+        display: none;
+    }
+    .CartWidget__desktop{
+        display: flex;
+    }
+ }

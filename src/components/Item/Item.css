@@ -1,0 +1,94 @@
+
+.card{
+    width: 21rem;
+    height: auto;
+    border-radius: 25px;
+    /* cursor: pointer; */
+    transition: .25s all ease-in-out;
+}
+.card-img-top{
+    object-fit: contain !important;
+    height: 260px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    
+}
+
+.Product__title{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.Product__price{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    font-weight: 500;
+    
+}
+
+
+.card:hover{
+    border: 1px solid var(--primary-color);
+}
+
+.Col__item{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.Button__addTocard, .Button__buy{
+    border: 2px solid var(--primary-color);
+    background: var(--primary-color);
+    padding: 8px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center;
+    color: var(--color-text);
+    font-weight: bold;
+    transition: .25s all ease-in-out;
+    text-transform: uppercase;
+}
+
+
+.Button__addTocard:hover{
+    border: 2px solid var(--primary-color);
+    background: var(--secondary-color);
+    color: var(--color-text-secondary);
+    
+
+}
+
+ .Button__container{
+    
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.Button{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+
+.Button div{
+    
+    display: flex;
+    align-content: center !important;
+    align-items: center !important;
+    justify-content: center;
+}
+
+
+
+

@@ -1,0 +1,25 @@
+.Rating{
+    display: flex;
+    align-items: center !important;
+}
+
+input[type="radio"]{
+    display: none;    
+}
+
+.fa-star{
+    color: rgb(211, 211, 211);
+    margin-right: .2rem;
+    cursor: pointer;
+    transition: .25s all ease-in-out;
+}
+
+.Star__active{
+    color: rgb(247, 228, 65);
+    transition: .25s all ease-in-out;
+}
+
+.Star__disable{
+    color: rgb(211, 211, 211);
+    transition: .25s all ease-in-out;
+}
