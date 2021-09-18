@@ -1,6 +1,6 @@
 
 .card{
-    width: 21rem;
+    width: 25rem;
     height: auto;
     border-radius: 25px;
     /* cursor: pointer; */
@@ -8,10 +8,15 @@
 }
 .card-img-top{
     object-fit: contain !important;
-    height: 260px;
+    height: 280px;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
+    transition: .25s all ease-in-out;
     
+}
+
+.card-img-top:hover{
+    transform: scale(.9);
 }
 
 .Product__title{
@@ -41,7 +46,17 @@
 }
 
 
-.Button__addTocard, .Button__buy{
+
+.Link__viewProduct:hover{
+    border: 2px solid var(--primary-color);
+    background: var(--secondary-color);
+    color: var(--color-text-secondary);
+    
+
+}
+
+.Link__viewProduct{
+    text-decoration: none;
     border: 2px solid var(--primary-color);
     background: var(--primary-color);
     padding: 8px;
@@ -56,17 +71,10 @@
     text-transform: uppercase;
 }
 
-
-.Button__addTocard:hover{
-    border: 2px solid var(--primary-color);
-    background: var(--secondary-color);
-    color: var(--color-text-secondary);
-    
-
+.Link__viewProduct:hover{
+    color: black;
 }
-
  .Button__container{
-    
     display: flex;
     justify-content: flex-end;
 }
@@ -82,7 +90,6 @@
 
 
 .Button div{
-    
     display: flex;
     align-content: center !important;
     align-items: center !important;

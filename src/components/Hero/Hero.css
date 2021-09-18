@@ -1,13 +1,11 @@
 .Hero{
     width: 100%;
     position: relative;
-    background: red;
 }
 
 .Image__slider{
-    height: 1220px;
-    height: 790px;
-    object-fit: cover;
+    height: 900px;
+    object-fit:cover;
 }
 
 .Caption{
@@ -58,4 +56,16 @@
 .Link__slider:hover{
     background: var(--primary-color);
     color: var(--color-text);
+}
+
+
+@media (max-width: 480px) { 
+    .Caption__content h3{
+        font-size: 2.4rem;
+    }
+
+    .Caption__content p{
+        font-size: .85rem;
+        width: 100% !important;
+    }
 }

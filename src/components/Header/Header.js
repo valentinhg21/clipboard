@@ -16,7 +16,7 @@ const Header = () => {
     <>
       <Navbar variant="dark" className="Navbar" expand="xl">
         <Container>
-          <Navbar.Brand className="NavbarBrand">Clipboard</Navbar.Brand>
+          <Navbar.Brand className="NavbarBrand" href="/">Clipboard</Navbar.Brand>
           <div className="Container__CartWdiget">
             <CartWidget/>
           </div>
@@ -37,32 +37,28 @@ const Header = () => {
                 <NavDropdown.Header className="NavDropdownHeader">
                   Computadoras
                 </NavDropdown.Header>
-                <NavDropdown.Item className="NavDropdownItem" href="/hogar">
+                <NavDropdown.Item className="NavDropdownItem" to="/products/computadoras/computadoras-gaming" as={NavLink} >
                   Gaming
-                </NavDropdown.Item>
-                <NavDropdown.Item className="NavDropdownItem" href="/gaming">
-                  Netbooks
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   className="NavDropdownItem"
-                  href="/empresariales"
+                  to="/products/computadoras/computadoras-empresarial"
+                  as={NavLink} 
                 >
                   Empresariales
                 </NavDropdown.Item>
 
-                {/* Netbooks Categoria */}
+                {/* Notebooks Categoria */}
                 <NavDropdown.Header className="NavDropdownHeader">
-                  Netbooks
+                  Notebooks
                 </NavDropdown.Header>
-                <NavDropdown.Item className="NavDropdownItem" href="/hogar">
+                <NavDropdown.Item className="NavDropdownItem" as={NavLink} to="/products/notebook/notebook-gaming">
                   Gaming
-                </NavDropdown.Item>
-                <NavDropdown.Item className="NavDropdownItem" href="/gaming">
-                  Netbooks
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   className="NavDropdownItem"
-                  href="/empresariales"
+                  as={NavLink} 
+                  to="/products/notebooks/notebook-empresarial"
                 >
                   Empresariales
                 </NavDropdown.Item>
@@ -71,20 +67,21 @@ const Header = () => {
                 <NavDropdown.Header className="NavDropdownHeader">
                   Accesorios
                 </NavDropdown.Header>
-                <NavDropdown.Item className="NavDropdownItem" href="/hogar">
+                <NavDropdown.Item className="NavDropdownItem" as={NavLink} to="/products/accesorios/teclados">
                   Teclados
                 </NavDropdown.Item>
-                <NavDropdown.Item className="NavDropdownItem" href="/gaming">
+                <NavDropdown.Item className="NavDropdownItem"  as={NavLink} to="/products/accesorios/mouse">
                   Mouse
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   className="NavDropdownItem"
-                  href="/empresariales"
+                  as={NavLink} 
+                  to="/products/accesorios/auriculares"
                 >
                   Auriculares
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link as={NavLink} to="/">
+              <Nav.Link as={NavLink} to="/login">
                 Entrar
               </Nav.Link>
               <Nav.Link as={NavLink} className="CartWidget__desktop" to="/">

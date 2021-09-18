@@ -1,46 +1,54 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 // Styles
-import '../ItemListContainer/ItemListContainer.css'
+import "../ItemListContainer/ItemListContainer.css";
 
 // Components
-import ItemList from '../ItemList/ItemList.js'
+import ItemList from "../ItemList/ItemList.js";
 
 // Functions
-import { getFetch } from '../../Utils/Helper.js'
-import Spinner from '../Spinner/Spinner.js'
+import { getFetch } from "../../Utils/Helper.js";
+import Spinner from "../Spinner/Spinner.js";
+
+// React Router Dom
+import {useParams} from 'react-router-dom';
+
 
 
 const ItemListContainer = () => {
-    //State de los productos
-    const [products, setProducts] = useState([]);
-    const [Loading, setLoading ]  = useState(null);
-    
-    useEffect(() =>{
-        getFetch
-            .then(res => {
-                setProducts(res)   
-                setLoading(true)             
-            })
-        setLoading(false)
-    }, [])
+  //State de los products
+  const [products, setProducts] = useState([]);
+  const [Loading, setLoading] = useState(null);
+  const {idSubCategory} = useParams();
+
+
+  useEffect(() => {
+      if(idSubCategory){
+        getFetch.then((res) => {
+          setProducts(res.filter(products => products.subCategory  ===  idSubCategory));
+        
+        })
+        .catch(error => console.log(error))
+        .finally(() => setLoading(true))
+      }
+      else{
+        getFetch.then((res) => {
+          setProducts(res);
+          
+        })
+        .catch(error => console.log(error))
+        .finally(() => setLoading(true))
+      }
 
     
 
-    return (
-        <div className="container mt-5 mb-5">
-            <div className="Title">
-                <h3>Productos</h3>
-            </div>
-            <div className="Products mt-5">
-                {!Loading ? <Spinner /> : 
-                <ItemList 
-                    
-                    products = {products}
-                />
-                }
-            </div>
-        </div>
-    )
-}
+  }, [idSubCategory]);
 
-export default ItemListContainer
+
+  return (
+    <div className="mt-5">
+      {!Loading ? <Spinner /> : <ItemList products={products} />}
+    </div>
+  );
+};
+
+export default ItemListContainer;

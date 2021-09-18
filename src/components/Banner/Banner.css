@@ -1,0 +1,214 @@
+.Banner{
+    padding-top:100px;
+    padding-bottom: 100px;
+}
+.First__banner{
+    background: #f2f8fd;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.First__banner-img{
+    max-width: 100%;
+    width: 100%;
+    vertical-align: middle;
+    transition: .25s all ease-in-out;
+}
+
+.First__banner-img:hover{
+    transform: scale(1.1);
+}
+
+.Banner__content{
+    position: absolute;
+    top: auto;
+    bottom: 40px;
+    width: 100%;
+    left: 50px;
+}
+
+.Banner__title{
+    color: #999da0;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.Banner__price{
+    display: block;
+    color: #161616;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    margin: 0 0 0;
+    
+}
+
+.Banner__link{
+    text-decoration: none;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 100px;
+    overflow: hidden;
+}
+
+.fa-arrow-right{
+    color: white;
+    transition: .25s all ease-in-out;
+}
+
+.fa-arrow-right:hover{
+    transform: scale(1.2);
+}
+
+/* SECOND BANNER */
+.Second__banner{
+    background: #f0f0f0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.Banner__content-second{
+    position: absolute;
+    top: 20px;
+    bottom: 0;
+    left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Banner__link-second{
+    text-decoration: none;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: auto;
+    bottom: 30px;
+    overflow: hidden;
+    bottom: 14px;
+}
+
+
+.margin{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+/* Tablets en horizonal y escritorios normales */
+@media (min-width: 768px) and (max-width: 1199px) { 
+        .Banner{
+            background: red;
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        .Banner__title{
+            font-size: 40px;
+            line-height: 50px;
+            margin: 0 0 12px;
+        }
+        .Banner__price{
+            font-size: 28px;
+            
+        }
+        .Banner__content{
+            top: auto;
+            bottom: 100px;
+            width: 100%;
+        }
+        .Banner__link{
+            width: 60px;
+            height: 60px;
+        }
+        .margin{
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .Banner__content-second{
+            top: 40px;
+            bottom: 0;
+        }
+        .Banner__link-second{
+            width: 60px;
+            height: 60px;
+            bottom: 50px;
+        }
+
+    
+}
+
+@media (min-width: 1200px){
+    .Banner{
+        padding-top: 100px;
+        padding-bottom: 100px;
+        
+    }
+
+    .Banner__title{
+        font-size: 40px;
+        line-height: 50px;
+        margin: 0 0 12px;
+    }
+
+    .Banner__price{
+        font-size: 28px;
+        
+    }
+
+    .Banner__content{
+        top: auto;
+        bottom: 100px;
+        width: 100%;
+    }
+
+    .Banner__link{
+        width: 60px;
+        height: 60px;
+    }
+
+    .margin{
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    .Banner__content-second{
+        top: 40px;
+        bottom: 0;
+    }
+
+    .Banner__link-second{
+        width: 60px;
+        height: 60px;
+        bottom: 50px;
+    }
+}

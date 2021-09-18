@@ -3,7 +3,7 @@ import './ItemCount.css'
 
 export default function ItemCount({stock, initial, removeAdd, onAdd}) {
   return (
-    <div className="col-md-4 Button">
+    <div className="col-4 Button">
       <button type="button" className="Plus__button">
         <i className="fas fa-minus" onClick={removeAdd}></i>
       </button>
