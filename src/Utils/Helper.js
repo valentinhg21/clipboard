@@ -9,3 +9,5 @@ export const getFetch = new Promise((resolve) => {
         
     }, 2000);
 })
+
+

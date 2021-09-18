@@ -1,3 +1,5 @@
+// Componenets
+import ItemDetail from "../ItemDetail/ItemDetail.js";
 
 import { useState, useEffect } from "react";
 
@@ -8,6 +10,7 @@ import {useParams} from 'react-router-dom';
 
 // Functions
 import { getFetch } from "../../Utils/Helper.js";
+import Spinner from "../Spinner/Spinner.js";
 
 
 export default function ItemDetailContainer() {
@@ -15,7 +18,7 @@ export default function ItemDetailContainer() {
     const [Loading, setLoading] = useState(null);
 
     const {idProduct} = useParams();
-    
+
 
     useEffect(() => {
         if(idProduct){
@@ -25,12 +28,7 @@ export default function ItemDetailContainer() {
               })
               .catch(error => console.log(error))
               .finally(() => setLoading(true))
-        }else{
-
-
-
         }
-
   
     }, [idProduct]);
 
@@ -38,8 +36,8 @@ export default function ItemDetailContainer() {
 
     return (
         <div className="container">
-            <h1>Detalle del producto {`${idProduct}`}</h1>
-            
+            {!Loading ? <Spinner /> : <ItemDetail item = {products}/> }
+        
         </div>
     )
 }

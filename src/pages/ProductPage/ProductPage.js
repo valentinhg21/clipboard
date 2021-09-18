@@ -11,10 +11,10 @@ import ItemListContainer from "../../components/ItemListContainer/ItemListContai
 export default function ProductPage() {
   return (
     <div className="Productpage">
-      <h1>HERO</h1>
+      
       <div className="container mt-5 mb-5">
         <div className="">
-            <h1>Titulo</h1>
+            <h1>Productos</h1>
         </div>
         <div className="mt-5"></div>
         <ItemListContainer />
