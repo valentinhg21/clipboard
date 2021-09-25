@@ -57,7 +57,7 @@
     border-radius: 20px;
     font-size: 14px;
     text-align: center;
-    color: var(--color-text);
+    color: white;
     font-weight: bold;
     transition: .25s all ease-in-out;
     text-transform: uppercase;
@@ -69,12 +69,14 @@
     color: var(--color-text-secondary);
 }
  .Button__container{
+    
     display: flex;
     justify-content: flex-end;
 }
 
 
 .Button{
+    
     display: flex;
     justify-content: space-between;
     align-content: center;

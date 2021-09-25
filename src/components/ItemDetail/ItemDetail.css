@@ -49,7 +49,7 @@
     border: 2px solid var(--primary-color);
     background: var(--primary-color);
     padding: 8px;
-    width: 100%;
+    width: 40%;
     height: auto;
     border-radius: 20px;
     font-size: 14px;
@@ -58,6 +58,7 @@
     font-weight: bold;
     transition: .25s all ease-in-out;
     text-transform: uppercase;
+    margin-right: 1rem;
 }
 
 .AddtoCart:hover{

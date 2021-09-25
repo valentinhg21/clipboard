@@ -36,8 +36,7 @@ export default function ItemDetailContainer() {
 
     return (
         <div className="container">
-            {!Loading ? <Spinner /> : <ItemDetail item = {products}/> }
-        
+            {!Loading ? <Spinner /> : <ItemDetail item = {products}/> } 
         </div>
     )
 }

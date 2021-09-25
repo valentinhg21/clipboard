@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
 import ItemCount from "../ItemCount/ItemCount";
 import RatingStar from "../RatingStar/RatingStar.js";
 import "./ItemDetail.css";
@@ -8,10 +9,9 @@ export default function ItemDetail({ item }) {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
   const [initial, setInitial] = useState(1);
-
+  const [changeButton, setChangeButton] = useState(true);
   return (
     <div className="Producto__details-container">
-      
       {item.map((item) => {
         const {
           id,
@@ -22,26 +22,12 @@ export default function ItemDetail({ item }) {
           productPicture,
           stock,
         } = item;
-        const min = 1;
-        const max = stock;
 
-        const onAdd = () => {
-          setInitial(initial + 1);
-          if (initial >= max) {
-            setInitial(initial);
-
-            return;
-          }
+        const onAdd = (quantity) => {
+          console.log(quantity);
+          setChangeButton(false);
         };
 
-        const removeAdd = () => {
-          setInitial(initial - 1);
-
-          if (initial <= min) {
-            setInitial(initial);
-            return;
-          }
-        };
         return (
           <div key={id}>
             <div className="row">
@@ -81,16 +67,37 @@ export default function ItemDetail({ item }) {
                     </div>
                     <div className="Count">
                       <ItemCount
-                        onAdd={onAdd}
                         initial={initial}
-                        removeAdd={removeAdd}
+                        setInitial={setInitial}
                         stock={stock}
+                        onAdd={onAdd}
                       />
                     </div>
                   </div>
 
                   <div className="AddtoCart__container">
-                    <Link className="AddtoCart ">COMPRAR AHORA</Link>
+                    {changeButton ? (
+                      <button
+                        type="button"
+                        className="AddtoCart"
+                        onClick={() => onAdd(initial)}
+                      >
+                        Agregar al carrito
+                      </button>
+                    ) : (
+                      <div>
+                        <Link to="/cart">
+                          <button type="button" className="AddtoCart">
+                            Terminar compra
+                          </button>
+                        </Link>
+                        <Link to="/">
+                          <button type="button" className="AddtoCart">
+                            Seguir comprando
+                          </button>
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

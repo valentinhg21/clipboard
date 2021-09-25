@@ -9,8 +9,6 @@ export default function Item({ product }) {
   const [hover, setHover] = useState(null);
   const [initial, setInitial ] = useState(1);
   
-
-
   // Destructuring
   const {
     id,
@@ -21,29 +19,14 @@ export default function Item({ product }) {
     stock
   } = product;
 
-  const min = 1;
-  const max = stock;
+
 
   const onAdd = () => {
-    setInitial(initial + 1)
-    if(initial >= max){
-      setInitial(initial)
 
-      return
-    }
 
   }
 
 
-  const removeAdd = () => {
-    
-      setInitial(initial - 1)
-
-      if(initial <= min){
-          setInitial(initial)
-          return
-      }
-  }
 
   
 
@@ -63,7 +46,7 @@ export default function Item({ product }) {
             <ItemCount 
               onAdd= {onAdd}
               initial = {initial}
-              removeAdd = {removeAdd}
+              setInitial={setInitial}
               stock = {stock}
             />
           </div>
