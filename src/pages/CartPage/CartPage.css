@@ -144,4 +144,8 @@
   .fa .fa-cc-visa:hover{
     background: white;
   }
+  .CartPage__button-clear{
+      width: 21%;
+      padding-left: 250px;
+  }
 }

@@ -1,35 +1,19 @@
-import { useState } from "react";
 
 import "./CartPage.css";
-import ItemCount from "../../components/ItemCount/ItemCount";
+
 import { Link } from "react-router-dom";
+import { CartContextUse } from "../../context/CartContext";
+
+
+
 export default function CartPage() {
-  const [initial, setInitial] = useState(1);
-  const stock = 4;
-  const min = 1;
-  const max = stock;
+  
+  const { cart, clear, removeItem } = CartContextUse();
 
-  const onAdd = () => {
-    setInitial(initial + 1);
-    if (initial >= max) {
-      setInitial(initial);
-
-      return;
-    }
-  };
-
-  const removeAdd = () => {
-    setInitial(initial - 1);
-
-    if (initial <= min) {
-      setInitial(initial);
-      return;
-    }
-  };
 
   return (
     <div className="container-fluid Cartpage mt-5">
-{/*       <div className="row">
+      <div className="row">
         <div className="col-lg-10 CartPage__itemList">
           <div className="container Itemlist ">
             <h1 className="CartPage__title">Carrito de compras</h1>
@@ -39,38 +23,43 @@ export default function CartPage() {
                 <div className="col-lg-3">Cantidad</div>
                 <div className="col-lg-3">Total</div>
               </div>
-              <div className="Item__container row">
-                <div className="Item__product col-lg-4">
-                  <div className="Item__product-container row">
-                    <div className="Product__img col-lg-6">
-                      <img
-                        src="https://i.ibb.co/sm1nZrP/Dell-Inspiron-15-6.jpg"
-                        alt=""
-                      />
+              {cart.map(element => {
+                  const {id, productName, productModel, price , productPicture} = element.item
+                  console.log('cartPage' , element.item)
+                  console.log('cartPage' , element.quantity)
+                  
+                  return(
+                    <div className="Item__container row" key={id}>
+                    <div className="Item__product col-lg-4">
+                      <div className="Item__product-container row">
+                        <div className="Product__img col-lg-6">
+                          <img
+                            src={productPicture}
+                            alt={productName}
+                          />
+                        </div>
+                        <div className="Product__details col-lg-6">
+                          <p>{productName} {productModel}</p>
+                          <p className="Product__details-price">${price}</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="Product__details col-lg-6">
-                      <p>Netbook leonovo 8 GB DE RAM SSSD 1220P </p>
-                      <p className="Product__details-price">$150.000</p>
+                    <div className="Item__quantity col-lg-3">
+                      <div>
+                          {element.quantity}
+                      </div>
+                    </div>
+                    <div className="Item__total col-lg-3">${price}</div>
+                    <div className="Item__delete col-lg-1">
+                      <button type="button" className="Button__delete" onClick={() => removeItem(element.item.id)}>
+                        <i className="fas fa-times"></i>
+                      </button>
                     </div>
                   </div>
-                </div>
-                <div className="Item__quantity col-lg-3">
-                  <div>
-                    <ItemCount
-                      onAdd={onAdd}
-                      initial={initial}
-                      removeAdd={removeAdd}
-                      stock={stock}
-                    />
-                  </div>
-                </div>
-                <div className="Item__total col-lg-3">$150.000</div>
-                <div className="Item__delete col-lg-1">
-                  <button type="button" className="Button__delete">
-                    <i className="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
+                  )
+                })
+                }
+
             </div>
           </div>
         </div>
@@ -107,8 +96,12 @@ export default function CartPage() {
             </div>
           </div>
         </div>
-      </div> */}
-      HOLA SOY CART
+      </div>
+      <div className="CartPage__button-clear">
+            <div className="d-grid">
+              <button type="button" className="Button__checkout" onClick={clear}>Limpiar</button>
+            </div>
+      </div>
     </div>
   );
 }

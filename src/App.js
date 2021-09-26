@@ -14,30 +14,31 @@ import Home from "./pages/Home/Home.";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import CartPage from "./pages/CartPage/CartPage";
-
-
+import  CartContextProvider  from "./context/CartContext";
 
 function App() {
   return (
     <>
-      <Router>
-        <Layout>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route
-              exact
-              path="/products/:idCategory/:idSubCategory"
-              component={ProductPage}
-            />
-            <Route
-              exact
-              path="/productsDetail/:idProduct"
-              component={ProductDetail}
-            />
-            <Route exact path="/cart" component={CartPage} />
-          </Switch>
-        </Layout>
-      </Router>
+      <CartContextProvider>
+        <Router>
+          <Layout>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route
+                exact
+                path="/products/:idCategory/:idSubCategory"
+                component={ProductPage}
+              />
+              <Route
+                exact
+                path="/productsDetail/:idProduct"
+                component={ProductDetail}
+              />
+              <Route exact path="/cart" component={CartPage} />
+            </Switch>
+          </Layout>
+        </Router>
+      </CartContextProvider>
     </>
   );
 }

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import RatingStar from "../RatingStar/RatingStar.js";
 import "./ItemDetail.css";
+import { CartContextUse } from "../../context/CartContext";
 
 export default function ItemDetail({ item }) {
   const [rating, setRating] = useState(null);
@@ -13,6 +14,7 @@ export default function ItemDetail({ item }) {
   return (
     <div className="Producto__details-container">
       {item.map((item) => {
+        const { addItem } = CartContextUse();
         const {
           id,
           productName,
@@ -24,7 +26,7 @@ export default function ItemDetail({ item }) {
         } = item;
 
         const onAdd = (quantity) => {
-          console.log(quantity);
+          addItem(item, quantity);
           setChangeButton(false);
         };
 

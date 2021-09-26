@@ -5,10 +5,9 @@ export default function ItemCount({stock, initial, setInitial}) {
 
   
   const add = () => {
-    
-    if(initial < stock ){
-      setInitial(initial + 1)
-    }
+      if(initial < stock ){
+        setInitial(initial + 1)
+      }
   }
 
 
