@@ -1,16 +1,27 @@
-import React from 'react'
-import '../CartWidget/CartWidget.css'
+import "../CartWidget/CartWidget.css";
+import { SidebarContextUse } from "../../context/SidebarContext";
+import { CartContextUse } from "../../context/CartContext";
 
+
+import CartModal from "../CartModal/CartModal";
 
 const CartWidget = () => {
-    return (
-        <div className="Cart">
-            <i className="fas fa-shopping-cart"></i>
-            <div className="Cart_count">
-                <p>0</p>
-            </div>
-        </div>
-    )
-}
+  const { showSidebar, handleShow } = SidebarContextUse();
+  const { cart } = CartContextUse();
 
-export default CartWidget
+  const cartQuantity = cart.length;
+
+  return (
+    <>
+      <div className="Cart">
+        <i className="fas fa-shopping-cart" onClick={handleShow}></i>
+        <div className="Cart_count">
+          <p>{cartQuantity}</p>
+        </div>
+      </div>
+      {showSidebar && <CartModal />}
+    </>
+  );
+};
+
+export default CartWidget;

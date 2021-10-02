@@ -1,12 +1,11 @@
-// Librerias
-import React from "react";
+// Libraries
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-// Estilos
+// Styles
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// Componentes
+// Components
 import Layout from "./components/Layout/Layout";
 
 //Pages
@@ -15,11 +14,16 @@ import ProductPage from "./pages/ProductPage/ProductPage";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import CartPage from "./pages/CartPage/CartPage";
 import  CartContextProvider  from "./context/CartContext";
+import SidebarContextProvider from "./context/SidebarContext";
+import Login from "./pages/Login/Login";
+import Store from "./pages/Store/Store";
+import Checkout from "./pages/Checkout/Checkout";
 
 function App() {
   return (
     <>
       <CartContextProvider>
+        <SidebarContextProvider>
         <Router>
           <Layout>
             <Switch>
@@ -35,9 +39,13 @@ function App() {
                 component={ProductDetail}
               />
               <Route exact path="/cart" component={CartPage} />
+              <Route exact path="/store" component={Store}/>
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/checkout" component={Checkout} />
             </Switch>
           </Layout>
         </Router>
+        </SidebarContextProvider>
       </CartContextProvider>
     </>
   );

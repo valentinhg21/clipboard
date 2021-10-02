@@ -1,5 +1,4 @@
 .Navbar{
-    
     position: sticky !important; 
     top: 0; 
     background-color: var(--primary-color);
@@ -97,5 +96,8 @@
     }
     .CartWidget__desktop{
         display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
     }
  }

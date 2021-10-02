@@ -1,10 +1,19 @@
+// Libraries
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContextUse } from "../../context/CartContext";
 
+
+// Components
 import ItemCount from "../ItemCount/ItemCount";
 import RatingStar from "../RatingStar/RatingStar.js";
 import "./ItemDetail.css";
-import { CartContextUse } from "../../context/CartContext";
+
+//Helpers
+import { formatPrice } from "../../Utils/Helper";
+
+
+
 
 export default function ItemDetail({ item }) {
   const [rating, setRating] = useState(null);
@@ -57,7 +66,7 @@ export default function ItemDetail({ item }) {
                       );
                     })}
                   </div>
-                  <h1 className="Product__details-price mb-lg-4">${price}</h1>
+                  <h1 className="Product__details-price mb-lg-4">{formatPrice(price)}</h1>
                   <p className="Product__details-desc mb-lg-4">
                     {productDescription}
                   </p>

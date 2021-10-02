@@ -1,97 +1,193 @@
-
-.card{
-    width: 25rem;
-    height: auto;
-    border-radius: 25px;
-    /* cursor: pointer; */
-    transition: .25s all ease-in-out;
-}
-.card-img-top{
-    object-fit: contain !important;
-    height: 280px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    transition: .25s all ease-in-out;
-    
+.card {
+  width: 25rem;
+  height: auto;
+  border-radius: 25px;
+  transition: 0.25s all ease-in-out;
+  position: relative;
 }
 
-.card-img-top:hover{
-    transform: scale(.9);
+.card:hover .ButtonActions__container {
+  display: flex;
+  cursor: pointer;
+}
+.card-img-top {
+  object-fit: contain !important;
+  height: 280px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  transition: 0.25s all ease-in-out;
 }
 
-.Product__title{
-    font-size: 1.3rem;
-    font-weight: 500;
+.card-img-top:hover {
+  transform: scale(0.9);
 }
 
-.Product__price{
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--primary-color);
-    font-weight: 500;
-    
+.Product__title {
+  width: 75%;
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
-
-.card:hover{
-    border: 1px solid var(--primary-color);
+.Product__price {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  font-weight: 500;
 }
-
-.Col__item{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-
-
-.Link__viewProduct{
-    text-decoration: none;
-    border: 2px solid var(--primary-color);
-    background: var(--primary-color);
-    padding: 8px;
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    font-size: 14px;
-    text-align: center;
-    color: white;
-    font-weight: bold;
-    transition: .25s all ease-in-out;
-    text-transform: uppercase;
-}
-
-.Link__viewProduct:hover{
-    border: 2px solid var(--primary-color);
-    background: var(--secondary-color);
-    color: var(--color-text-secondary);
-}
- .Button__container{
-    
-    display: flex;
-    justify-content: flex-end;
-}
-
-
-.Button{
-    
+.ItemCount__container{
     display: flex;
     justify-content: space-between;
-    align-content: center;
-    align-items: center;
-    margin-left: 1rem;
+}
+.card:hover {
+  border: 1px solid var(--primary-color);
+}
+
+.Col__item {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.Link__viewProduct {
+  text-decoration: none;
+  border: 2px solid var(--primary-color);
+  background: var(--primary-color);
+  padding: 8px;
+  width: 200px;
+  height: auto;
+  border-radius: 20px;
+  font-size: 14px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  transition: 0.25s all ease-in-out;
+  text-transform: uppercase;
+}
+
+.Link__viewProduct:hover {
+  border: 2px solid var(--primary-color);
+  background: var(--secondary-color);
+  color: var(--color-text-secondary);
+}
+.Button__container-view {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Button {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.Button div {
+  display: flex;
+  align-content: center !important;
+  align-items: center !important;
+  justify-content: center;
 }
 
 
-.Button div{
-    display: flex;
-    align-content: center !important;
-    align-items: center !important;
-    justify-content: center;
+
+.ButtonActions__container {
+  position: absolute;
+  display: flex;
+  top: 10px;
+  right: 0px;
+  width: 30%;
+  height: 95%;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  transition: 0.25s all ease;
 }
 
+.Actions__viewProduct {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
 
+.Actions__buy {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 
+.Search__btn,
+.Buy__btn {
+  background: rgb(231, 231, 231);
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(83, 83, 83);
+  transition: 0.25s all ease-in-out;
+  margin-right: 1rem;
+  border: none;
+}
+.Buy__btn {
+  position: relative;
+  background-color: var(--primary-color);
+}
 
+.Buy__btn:hover {
+  background: rgb(53, 53, 53);
+}
+.Search__btn:hover {
+  background-color: var(--primary-color);
+  color: #fff !important;
+}
+
+.Link > i {
+  width: 100%;
+  font-size: 16px;
+}
+
+/* SPINNER ICON */
+/* LOADING */
+.lds-ring {
+  display: inline-block;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: 8px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

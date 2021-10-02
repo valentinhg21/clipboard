@@ -9,7 +9,6 @@
 
 .Cart_count{
     position:absolute;
-    
     bottom: 1rem;
     left: 1rem;
     background: #fff;
@@ -28,4 +27,9 @@
 .Cart_count p{
     color: black;
 }
+
+
+
+
+
 

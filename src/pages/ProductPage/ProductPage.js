@@ -1,4 +1,4 @@
-// React Router Dom
+
 
 // Estilos
 import "./ProductPage.css";

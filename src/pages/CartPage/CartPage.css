@@ -90,6 +90,11 @@
     padding: 0;
   }
   .Checkout {
+    position: fixed;
+  
+    right: 0;
+    top: 65px;
+
     background: rgb(245, 245, 245);
     display: flex;
     justify-content: center;
@@ -112,7 +117,9 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+
   .Button__checkout{
+      width: 100%;
       border: 2px solid var(--primary-color);
       display: flex;
       align-items: center;
@@ -123,7 +130,6 @@
       background: var(--primary-color);
       color: white;
       transition: .25s all ease-in-out;
-      
   }
 
   .Button__checkout:hover{
@@ -144,8 +150,13 @@
   .fa .fa-cc-visa:hover{
     background: white;
   }
-  .CartPage__button-clear{
-      width: 21%;
-      padding-left: 250px;
+  .CartPage__buttons{
+      width: 100%;
+      padding-left:270px;
+  }
+  .Button__container{
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
   }
 }

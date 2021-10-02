@@ -1,4 +1,8 @@
+// Styles
 import './Banner.css'
+
+
+// Images Banner
 import Banner1 from "../../img/banner.png";
 import Banner2 from "../../img/banner2.png";
 import Banner3 from "../../img/banner3.png"
@@ -18,8 +22,8 @@ const Banner = () => {
                   <br />
                   Especial
                 </h3>
-                <span className="Banner__price">$40.000</span>
-                <Link to="!#" className="Banner__link">
+                <span className="Banner__price">$55.000</span>
+                <Link to="/productsDetail/28" className="Banner__link">
                 <i className="fas fa-arrow-right"></i>
                 </Link>
               </div>
@@ -32,8 +36,8 @@ const Banner = () => {
                 <h3 className="Banner__title">
                   Auriculares
                 </h3>
-                <span className="Banner__price">$6.000</span>
-                <Link to="!#" className="Banner__link-second">
+                <span className="Banner__price">$7.000</span>
+                <Link to="/productsDetail/16" className="Banner__link-second">
                   <i className="fas fa-arrow-right"></i>
                 </Link>
               </div>
@@ -45,7 +49,7 @@ const Banner = () => {
                   PC Gamer
                 </h3>
                 <span className="Banner__price">$90.000</span>
-                <Link to="!#" className="Banner__link-second">
+                <Link to="/productsDetail/11" className="Banner__link-second">
                   <i className="fas fa-arrow-right"></i>
                 </Link>
               </div>

@@ -1,4 +1,6 @@
+import React from 'react'
 import { useState, useEffect } from "react";
+
 // Styles
 import "../ItemListContainer/ItemListContainer.css";
 
@@ -15,12 +17,13 @@ import {useParams} from 'react-router-dom';
 
 
 const ItemListContainer = () => {
+
   //State de los products
   const [products, setProducts] = useState([]);
   const [Loading, setLoading] = useState(null);
   const {idSubCategory} = useParams();
 
-
+  // Buscar por idSubCategory
   useEffect(() => {
       if(idSubCategory){
         getFetch.then((res) => {
@@ -38,8 +41,6 @@ const ItemListContainer = () => {
         .catch(error => console.log(error))
         .finally(() => setLoading(true))
       }
-
-    
 
   }, [idSubCategory]);
 

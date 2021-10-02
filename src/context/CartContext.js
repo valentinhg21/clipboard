@@ -23,16 +23,16 @@ export default function CartContextProvider({ children }) {
       setCart([...cart, { item, quantity }]);
     }
   };
+
   const isInCart = (id) => cart.find((element) => element.item.id === id);
-
+  // Clear products
   const clear = () => setCart([]);
-
+  // RemoveItem
   const removeItem = (id) => {
     const cartFilter = cart.filter((element) => element.item.id !== id);
     setCart(cartFilter);
   };
 
-  console.log(cart);
   return (
     <CartContext.Provider value={{ cart, addItem,  removeItem, clear}}>
       {children}
