@@ -11,7 +11,6 @@ import ItemListContainer from "../../components/ItemListContainer/ItemListContai
 export default function ProductPage() {
   return (
     <div className="Productpage">
-      
       <div className="container mt-5 mb-5">
         <div className="">
             <h1>Productos</h1>

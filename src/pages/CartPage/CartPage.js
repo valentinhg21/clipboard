@@ -31,7 +31,7 @@ export default function CartPage() {
                 <div className="col-lg-3">Total</div>
               </div>
               {cart.map((element) => {
-                const { id, productName, productModel, price, productPicture } =
+                const { id, title, model, price, pictureUrl } =
                   element.item;
                   const precioPorCantidad = price * element.quantity
                 return (
@@ -39,11 +39,11 @@ export default function CartPage() {
                     <div className="Item__product col-lg-4">
                       <div className="Item__product-container row">
                         <div className="Product__img col-lg-6">
-                          <img src={productPicture} alt={productName} />
+                          <img src={pictureUrl} alt={title} />
                         </div>
                         <div className="Product__details col-lg-6">
                           <p>
-                            {productName} {productModel}
+                            {title} {model}
                           </p>
                           <p className="Product__details-price">{formatPrice(price)}</p>
                         </div>

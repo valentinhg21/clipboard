@@ -14,14 +14,14 @@ import { SidebarContextUse } from "../../context/SidebarContext";
 import { CartContextUse } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 
-export default function Item({ product, isVisible }) {
+export default function Item({ product }) {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
   const [initial, setInitial] = useState(1);
   const [loading, setLoading] = useState(false);
   // Destructuring
-  const { id, productName, productModel, price, productPicture, stock } =
-    product;
+
+  const {id, title, model, pictureUrl, price, stock,} = product; 
   // SidebarContext
   const { handleShow } = SidebarContextUse();
   // CartContext
@@ -37,13 +37,16 @@ export default function Item({ product, isVisible }) {
 
   };
 
+  
+ 
+
   return (
     <div className="col-12 col-md-6 col-lg-4 Col__item">
       <div className="card" key={id}>
-        <img src={productPicture} className="card-img-top " alt={productName} />
+        <img src={pictureUrl} className="card-img-top " alt={title} />
         <div className="card-body">
           <p className="card-text Product__title">
-            {productName} {productModel}
+            {title} {model}
           </p>
           <div className="col-md-5 Rating__container col-sm-12 my-sm-2 col-xs-12 col-12 my-2">
             {[...Array(5)].map((star, i) => {

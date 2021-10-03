@@ -8,6 +8,7 @@ export const CartContextUse = () => {
 
 export default function CartContextProvider({ children }) {
   const [cart, setCart] = useState([]);
+  
   const addItem = (item, quantity) => {
     if (isInCart(item.id)) {
       const updateQty = [...cart];

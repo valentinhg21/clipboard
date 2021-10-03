@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState, useEffect } from "react";
 
 // Styles
@@ -8,46 +7,53 @@ import "../ItemListContainer/ItemListContainer.css";
 import ItemList from "../ItemList/ItemList.js";
 
 // Functions
-import { getFetch } from "../../Utils/Helper.js";
 import Spinner from "../Spinner/Spinner.js";
 
 // React Router Dom
-import {useParams} from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
-
+// Firebase
+import { getFirestore } from "../../services/getFirebase";
 
 const ItemListContainer = () => {
-
   //State de los products
   const [products, setProducts] = useState([]);
-  const [Loading, setLoading] = useState(null);
-  const {idSubCategory} = useParams();
+  const [Loading, setLoading] = useState(true);
+  const { idSubCategory } = useParams();
 
-  // Buscar por idSubCategory
+  
+
   useEffect(() => {
-      if(idSubCategory){
-        getFetch.then((res) => {
-          setProducts(res.filter(products => products.subCategory  ===  idSubCategory));
-        
+    const dbQuery = getFirestore();
+    if (idSubCategory) {
+      dbQuery
+        .collection("products")
+        .where("subCategory", "==", idSubCategory)
+        .get()
+        .then((res) => {
+          setProducts(
+            res.docs.map((product) => ({ id: product.id, ...product.data() }))
+          );
         })
-        .catch(error => console.log(error))
-        .finally(() => setLoading(true))
-      }
-      else{
-        getFetch.then((res) => {
-          setProducts(res);
-          
+        .catch((err) => console.log(err))
+        .finally(() => setLoading(false));
+    } else {
+      dbQuery
+        .collection("products")
+        .get()
+        .then((res) => {
+          setProducts(
+            res.docs.map((product) => ({ id: product.id, ...product.data() }))
+          );
         })
-        .catch(error => console.log(error))
-        .finally(() => setLoading(true))
-      }
-
+        .catch((err) => console.log(err))
+        .finally(() => setLoading(false));
+    }
   }, [idSubCategory]);
-
 
   return (
     <div className="mt-5">
-      {!Loading ? <Spinner /> : <ItemList products={products} />}
+      {Loading ? <Spinner /> : <ItemList products={products} />}
     </div>
   );
 };
