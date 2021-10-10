@@ -25,7 +25,7 @@ const Header = () => {
               <Nav.Link as={NavLink} to="/">
                 Inicio
               </Nav.Link>
-              <Nav.Link href="/tienda">Tienda</Nav.Link>
+              <Nav.Link href="/store">Tienda</Nav.Link>
 
               <NavDropdown
                 className="NavDropdown"

@@ -5,6 +5,7 @@ import { CartContextUse } from "../../context/CartContext";
 import {useHistory} from 'react-router-dom'
 import { formatPrice } from "../../Utils/Helper";
 export default function CartPage() {
+
   const { cart, clear, removeItem } = CartContextUse();
   const history = useHistory()
 
@@ -18,6 +19,7 @@ export default function CartPage() {
   const handleClick = () => history.push("/")
 
   const precioTotal = suma * 0.27 + suma;
+
   return (
     <div className="container-fluid Cartpage mt-5">
       <div className="row">
@@ -84,7 +86,7 @@ export default function CartPage() {
               </div>
             </div>
             <div className="d-grid Button__checkout-container">
-              <Link to="/cart" className="Button__checkout">
+              <Link to="/checkout" className="Button__checkout">
                 Procesar orden
               </Link>
             </div>

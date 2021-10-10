@@ -17,7 +17,7 @@ export default function Hero() {
             <div className="Caption__content">
               <h3 className="">NUEVOS LANZAMIENTOS</h3>
               <p>Para ver todos los producto nuevos visita nuestra tienda.</p>
-              <Link to="" className="Link__slider">Tienda</Link>
+              <Link to="/store" className="Link__slider">Tienda</Link>
             </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -31,7 +31,7 @@ export default function Hero() {
             <div className="Caption__content">
               <h3 className="">LAS MEJORES MARCAS </h3>
               <p>Encontra las mejores marcas de notebooks acá!.</p>
-              <Link to="" className="Link__slider">Tienda</Link>
+              <Link to="/store" className="Link__slider">Tienda</Link>
             </div>
           </Carousel.Caption>
         </Carousel.Item>

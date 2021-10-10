@@ -18,6 +18,7 @@ import SidebarContextProvider from "./context/SidebarContext";
 import Login from "./pages/Login/Login";
 import Store from "./pages/Store/Store";
 import Checkout from "./pages/Checkout/Checkout";
+import Register from "./pages/Register/Register";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
               <Route exact path="/cart" component={CartPage} />
               <Route exact path="/store" component={Store}/>
               <Route exact path="/login" component={Login} />
+              <Route exact path="/register" component={Register} />
               <Route exact path="/checkout" component={Checkout} />
             </Switch>
           </Layout>

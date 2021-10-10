@@ -1,44 +1,30 @@
-.CheckoutPage{
-    background: var(--primary-color);
-    height: 92vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.CheckoutPage > h1{
-    font-size: 35px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: white;
-}
-
-.FormCheckout{
+.FormRegister{
     background: white;
+    flex-direction: column;
     padding: 8px;
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    max-width: 450px;
+    max-width: 350px;
     width: 100%;
     box-shadow: 0px 3px 12px -6px rgba(0,0,0,0.75);
     -webkit-box-shadow: 0px 3px 12px -6px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 3px 12px -6px rgba(0,0,0,0.75);
 }
-.FormCheckout__input{
+
+.Form__input{
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.FormCheckout__input > label{
+.Form__input > label{
     font-size: 16px;
     margin-top: 10px;
     margin-bottom: 10px;
     padding-left: 5px;
 }
 
-.FormCheckout__input > input{
+.Form__input > input{
     padding-left: 7px;
     height: 40px;
     border: 1px solid rgb(182, 182, 182);
@@ -46,7 +32,7 @@
     border-radius: 8px;
 }
 
-.FormCheckout__button{
+.Form__button{
     margin-top: 20px;
     margin-bottom: 20px;
     display: flex;
@@ -54,7 +40,7 @@
     justify-content: center;
 }
 
-.FormCheckout__button > button{
+.Form__button > button{
     width: 100%;
     height: 35px;
     outline: none;
@@ -63,8 +49,25 @@
     background: var(--primary-color);
     color: white;
     transition: .25s all ease-in-out;
+
 }
 
-.FormCheckout__button  > button:hover{
-    background: #6029ad;
+.Form__button > button:hover{
+    background: #6029ad;;
+}
+
+.Form__content{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.Form__content > p{
+    font-size: 14px;
+}
+.Form__content > p > .Link{
+    color: black;
+    font-weight: 450;
 }

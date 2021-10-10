@@ -11,6 +11,7 @@ export default function SidebarContextProvider({ children }) {
     const handleClose = () => setShowSidebar(false);
 
     const handleShow = () => setShowSidebar(true);
+    
     return(
         <SidebarContext.Provider value={{
             showSidebar,

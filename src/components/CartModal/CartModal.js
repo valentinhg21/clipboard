@@ -31,7 +31,6 @@ export default function CartModal({ children }) {
     suma += productosTotales;
   }
 
-  console.log('CART MODAL', cart)
 
   return ReactDom.createPortal(
     <>
@@ -56,7 +55,7 @@ export default function CartModal({ children }) {
                       price,
                       pictureUrl,
                     } = element.item;
-                    console.log('Element')
+                    
                     return (
                       <div className="Cart__content" key={id}>
                         <div className="row w-100">
