@@ -10,6 +10,10 @@ Al entrar a la página, el usuario podra navegar y mirar todos los productos, te
 
 Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
 
+## Live Preview
+Para visualizar la pagina ingresa a la URL.
+URL : https://coderhouse-clipboard-ecomerce.netlify.app/
+
 # Instrucciones de instalación
 
 git clone https://github.com/valentinhg21/clipboard.git
