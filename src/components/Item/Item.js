@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { formatPrice } from "../../Utils/Helper";
 
-import { motion } from "framer-motion";
-
 // Styles
 import "./Item.css";
 
@@ -74,11 +72,8 @@ export default function Item({ product }) {
               />
             </div>
           </div>
-          <motion.div
+          <div
             className="ButtonActions__container"
-/*             whileHover={{ x: 0 }}
-            style={{ x: 25 }}
-            transition={{ type: "spring", stiffness: 10000 }} */
           >
             <div className="Actions__viewProduct">
               <Link to={`/productsDetail/${id}`} className="Link Search__btn">
@@ -100,7 +95,7 @@ export default function Item({ product }) {
                 )}
               </button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>
