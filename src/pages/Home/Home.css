@@ -12,3 +12,10 @@
     font-size: 3.2rem;
     font-weight: bold;
 }
+
+@media (max-width: 480px) {
+    .Title h3{
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+ }

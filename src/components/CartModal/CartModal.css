@@ -9,7 +9,7 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    z-index: 2;
+    z-index: 9999;
 }   
 
 .Cart__sidebar-container{
@@ -197,3 +197,22 @@
     background-color: #000000;
     color: white;
 }
+
+@media (max-width: 767px) { 
+    .Cart__sidebar{
+        width: 100%;
+    }
+
+}
+/* Móviles en vertical */
+@media (max-width: 480px) { 
+    .Cart__sidebar{
+        width: 100%;
+    }
+}
+/* EXTRA LARGE */
+@media (min-width: 1200px) { 
+
+
+    
+ }

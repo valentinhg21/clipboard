@@ -33,3 +33,18 @@ body{
     text-align: center;
     width: 100%;
 }
+
+.fa-user, .fa-lock, .fa-envelope{
+  margin-right: 8px;
+}
+
+/* Media queries */
+/* Móviles en vertical */
+@media (max-width: 480px) { }
+/* Móviles en horizontal o tablets en vertical */
+@media (max-width: 767px) { }
+
+/* Tablets en horizonal y escritorios normales */
+@media (min-width: 768px) and (max-width: 1199px) {}
+/* EXTRA LARGE */
+@media (min-width: 1200px) { }

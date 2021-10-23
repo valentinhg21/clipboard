@@ -2,23 +2,13 @@ import "./CartPage.css";
 
 import { Link } from "react-router-dom";
 import { CartContextUse } from "../../context/CartContext";
-import {useHistory} from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 import { formatPrice } from "../../Utils/Helper";
 export default function CartPage() {
-
-  const { cart, clear, removeItem } = CartContextUse();
-  const history = useHistory()
-
-  let suma = 0;
-
-  for (let index = 0; index < cart.length; index++) {
-    const productosTotales = cart[index].item.price * cart[index].quantity;
-    suma += productosTotales;
-  }
-
-  const handleClick = () => history.push("/")
-
-  const precioTotal = suma * 0.27 + suma;
+  const { cart, clear, removeItem, subTotalPrice, totalPrice } =
+    CartContextUse();
+  const history = useHistory();
+  const handleClick = () => history.push("/");
 
   return (
     <div className="container-fluid Cartpage mt-5">
@@ -33,9 +23,8 @@ export default function CartPage() {
                 <div className="col-lg-3">Total</div>
               </div>
               {cart.map((element) => {
-                const { id, title, model, price, pictureUrl } =
-                  element.item;
-                  const precioPorCantidad = price * element.quantity
+                const { id, title, model, price, pictureUrl } = element.item;
+                const precioPorCantidad = price * element.quantity;
                 return (
                   <div className="Item__container row" key={id}>
                     <div className="Item__product col-lg-4">
@@ -47,14 +36,18 @@ export default function CartPage() {
                           <p>
                             {title} {model}
                           </p>
-                          <p className="Product__details-price">{formatPrice(price)}</p>
+                          <p className="Product__details-price">
+                            {formatPrice(price)}
+                          </p>
                         </div>
                       </div>
                     </div>
                     <div className="Item__quantity col-lg-3">
                       <div>{element.quantity}</div>
                     </div>
-                    <div className="Item__total col-lg-3">{formatPrice(precioPorCantidad)}</div>
+                    <div className="Item__total col-lg-3">
+                      {formatPrice(precioPorCantidad)}
+                    </div>
                     <div className="Item__delete col-lg-1">
                       <button
                         type="button"
@@ -80,9 +73,9 @@ export default function CartPage() {
                 <p>Total</p>
               </div>
               <div className="col-lg-6">
-                <p>{formatPrice(suma)}</p>
+                <p>{formatPrice(subTotalPrice)}</p>
                 <p>27%</p>
-                <p>{formatPrice(precioTotal)}</p>
+                <p>{formatPrice(totalPrice)}</p>
               </div>
             </div>
             <div className="d-grid Button__checkout-container">
@@ -112,10 +105,13 @@ export default function CartPage() {
             </button>
           </div>
           <div style={{ width: "120px" }}>
-
-              <button type="button" className="Button__checkout" onClick={handleClick}>
-                Volver
-              </button>
+            <button
+              type="button"
+              className="Button__checkout"
+              onClick={handleClick}
+            >
+              Volver
+            </button>
           </div>
         </div>
       </div>

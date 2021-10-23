@@ -1,3 +1,7 @@
+.Producto__details-container{
+    margin-top: 90px;
+
+}
 .Product__details-title{
     font-size: 2.5rem;
 }
@@ -17,7 +21,6 @@
     
 }
 .Stock__container{
-
     width: 100%;
     display: flex;
     align-content: center;
@@ -65,4 +68,37 @@
     border: 2px solid var(--primary-color);
     background: var(--secondary-color);
     color: var(--color-text-secondary);
+}
+
+/* Móviles en horizontal o tablets en vertical */
+@media (max-width: 767px) { 
+    .Product__details-img{
+        width: 85%;
+    }
+    .Product__details-title{
+        font-size: 1.5rem;
+    }
+    
+    .Product__details-price{
+        color: var(--primary-color);
+    }
+    
+    .Product__details-desc{
+        line-height: 1.5rem;
+        
+    }
+    .AddtoCart{
+        width: 60%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+}
+/* Móviles en vertical */
+@media (max-width: 480px) { 
+    .AddtoCart{
+        width: 60%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }

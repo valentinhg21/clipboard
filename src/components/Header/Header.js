@@ -7,12 +7,21 @@ import "../Header/Header.css";
 // React-Boostrap
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import CartWidget from "../CartWidget/CartWidget";
-
+import { AuthContextUse } from "../../context/AuthContext";
+import {auth} from '../../services/getFirebase'
+import {useHistory} from 'react-router-dom';
 const Header = () => {
+  const {currentUser} = AuthContextUse();
+  const history = useHistory()
+  const Logout = () => {
+    auth.signOut().then(() => {
+      history.push("/login")
+    })
+  }
   return (
     <>
-      <Navbar variant="dark" className="Navbar" expand="xl">
-        <Container>
+      <Navbar variant="dark" className="Navbar"  expand="xl" fixed="top">
+        <Container className="Navbar__container">
           <Navbar.Brand className="NavbarBrand" href="/">
             Clipboard
           </Navbar.Brand>
@@ -25,7 +34,6 @@ const Header = () => {
               <Nav.Link as={NavLink} to="/">
                 Inicio
               </Nav.Link>
-              <Nav.Link href="/store">Tienda</Nav.Link>
 
               <NavDropdown
                 className="NavDropdown"
@@ -96,9 +104,14 @@ const Header = () => {
                   Auriculares
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link as={NavLink} to="/login">
+              {!currentUser ? (<Nav.Link as={NavLink} to="/login">
                 Entrar
-              </Nav.Link>
+              </Nav.Link>) : (
+              <button type="button" onClick={Logout} className="Button__logout">
+                Cerrar Sesión
+              </button>)
+              }
+
               <div className="CartWidget__desktop">
                 <CartWidget  />
               </div>

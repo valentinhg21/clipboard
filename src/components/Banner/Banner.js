@@ -13,7 +13,7 @@ const Banner = () => {
     <div className="Banner">
       <div className="container">
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-lg-6 col-md-12 col-sm-12">
             <div className="First__banner">
               <img src={Banner1} alt="banner" className="First__banner-img"/>
               <div className="Banner__content">
@@ -23,13 +23,13 @@ const Banner = () => {
                   Especial
                 </h3>
                 <span className="Banner__price">$55.000</span>
-                <Link to="/productsDetail/28" className="Banner__link">
+                <Link to="/productsDetail/kmw6PxaAEwbT3rIQbxOO" className="Banner__link">
                 <i className="fas fa-arrow-right"></i>
                 </Link>
               </div>
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-6 col-md-12 col-sm-12">
             <div className="Second__banner margin">
               <img src={Banner2} alt="Auriculares" className="First__banner-img"/>
               <div  className="Banner__content-second">
@@ -37,7 +37,7 @@ const Banner = () => {
                   Auriculares
                 </h3>
                 <span className="Banner__price">$7.000</span>
-                <Link to="/productsDetail/16" className="Banner__link-second">
+                <Link to="/productsDetail/DZEgRj3kX4e96FLapySP" className="Banner__link-second">
                   <i className="fas fa-arrow-right"></i>
                 </Link>
               </div>
@@ -49,7 +49,7 @@ const Banner = () => {
                   PC Gamer
                 </h3>
                 <span className="Banner__price">$90.000</span>
-                <Link to="/productsDetail/11" className="Banner__link-second">
+                <Link to="/productsDetail/jLoSs25kFQnLhtLqrkQ2" className="Banner__link-second">
                   <i className="fas fa-arrow-right"></i>
                 </Link>
               </div>

@@ -1,9 +1,9 @@
 .FormLogin{
     background: white;
     flex-direction: column;
-    padding: 8px;
+    padding: 15px;
     border-radius: 8px;
-    max-width: 350px;
+    max-width: 400px;
     width: 100%;
     box-shadow: 0px 3px 12px -6px rgba(0,0,0,0.75);
     -webkit-box-shadow: 0px 3px 12px -6px rgba(0,0,0,0.75);
@@ -22,7 +22,9 @@
     margin-top: 10px;
     margin-bottom: 10px;
     padding-left: 5px;
+    color: rgb(85, 85, 85);
 }
+
 
 .Form__input > input{
     padding-left: 7px;

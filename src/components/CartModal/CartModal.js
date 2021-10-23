@@ -22,14 +22,8 @@ export default function CartModal({ children }) {
   // SidebarContextUse
   const { handleClose } = SidebarContextUse();
   // CartContextUse
-  const { cart, removeItem } = CartContextUse();
+  const { cart, removeItem, subTotalPrice } = CartContextUse();
   
-  // Suma del precio de los items en el carrito
-  let suma = 0;
-  for (let index = 0; index < cart.length; index++) {
-    const productosTotales = cart[index].item.price * cart[index].quantity;
-    suma += productosTotales;
-  }
 
 
   return ReactDom.createPortal(
@@ -92,7 +86,7 @@ export default function CartModal({ children }) {
             </div>
             <div className="Cart__totaly">
               <h3>Subtotal</h3>
-              <h3>{formatPrice(suma)}</h3>
+              <h3>{formatPrice(subTotalPrice)}</h3>
             </div>
             <div className="Cart__buttons">
               <Link

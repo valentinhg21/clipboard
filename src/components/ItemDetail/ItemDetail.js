@@ -29,7 +29,7 @@ export default function ItemDetail({ product }) {
       <div key={id}>
         <div className="row">
           <div className="col-12 col-md-6">
-            <img src={pictureUrl} alt={title} />
+            <img src={pictureUrl} alt={title} className="Product__details-img"/>
           </div>
           <div className="col-12 col-md-6">
             <div className="Product__details">

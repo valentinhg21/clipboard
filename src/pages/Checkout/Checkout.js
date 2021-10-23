@@ -4,6 +4,7 @@ import { CartContextUse } from "../../context/CartContext";
 import { getFirestore } from "../../services/getFirebase";
 import firebase from "firebase";
 import Swal from 'sweetalert2'
+import Message from "../../components/Message/Message";
 
 
 export default function Checkout() {
@@ -14,19 +15,12 @@ export default function Checkout() {
     address: "",
     phone: "",
   });
+  const [error, setError] = useState(false);
 
-  const { cart, clear } = CartContextUse();
+  const { cart, clear, totalPrice } = CartContextUse();
 
   const { name, lastName, email, address, phone } = buyer;
 
-  let suma = 0;
-
-  for (let index = 0; index < cart.length; index++) {
-    const productosTotales = cart[index].item.price * cart[index].quantity;
-    suma += productosTotales;
-  }
-
-  const precioTotal = suma * 0.27 + suma;
 
   const handleChange = (e) => {
     setBuyer({
@@ -35,13 +29,21 @@ export default function Checkout() {
     });
   };
 
+  // FormSubmit
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Validations
+    if(name.trim() === '' || lastName.trim() === '' || email.trim() === '' || address.trim() === '' || phone.trim() === ''){
+      setError(true);
+      return
+    }
+    setError(false);
 
     let order = {};
     order.date = firebase.firestore.Timestamp.fromDate(new Date());
     order.buyer = { name, lastName, email, address, phone };
-    order.total = precioTotal;
+    order.total = totalPrice;
     order.items = cart.map((product) => {
       const id = product.item.id;
       const title = product.item.title;
@@ -75,7 +77,9 @@ export default function Checkout() {
   return (
     <div className="container-fluid CheckoutPage">
       <h1>Checkout</h1>
+
       <div className="FormCheckout">
+      {error && (<Message message="Completar todos los campos" />)}
         <div className="FormCheckout__input">
           <label htmlFor="name">Nombre</label>
           <input

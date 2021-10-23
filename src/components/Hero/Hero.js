@@ -1,6 +1,5 @@
 import { Carousel } from "react-bootstrap";
 import "./Hero.css";
-import {Link} from 'react-router-dom'
 import Slide1 from "../../img/slide-1.jpg";
 import Slide2 from "../../img/slide-2.jpg";
 export default function Hero() {
@@ -17,7 +16,6 @@ export default function Hero() {
             <div className="Caption__content">
               <h3 className="">NUEVOS LANZAMIENTOS</h3>
               <p>Para ver todos los producto nuevos visita nuestra tienda.</p>
-              <Link to="/store" className="Link__slider">Tienda</Link>
             </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -31,7 +29,6 @@ export default function Hero() {
             <div className="Caption__content">
               <h3 className="">LAS MEJORES MARCAS </h3>
               <p>Encontra las mejores marcas de notebooks acá!.</p>
-              <Link to="/store" className="Link__slider">Tienda</Link>
             </div>
           </Carousel.Caption>
         </Carousel.Item>

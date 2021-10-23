@@ -5,7 +5,10 @@ import ItemListContainer from "../../components/ItemListContainer/ItemListContai
 import Hero from '../../components/Hero/Hero';
 import Banner from '../../components/Banner/Banner';
 
+
 export default function Home() {
+
+
     return (
         <div className="home">
             <Hero />

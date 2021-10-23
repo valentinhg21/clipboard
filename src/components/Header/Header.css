@@ -1,14 +1,13 @@
 .Navbar{
-    position: sticky !important; 
-    top: 0; 
     background-color: var(--primary-color);
     padding-top: 10px;
     padding-bottom: 10px;
-    z-index: 1; 
-    overflow: hidden; 
     width: 100%;
-    height: 8vh;
+    min-height: 8vh;
+
+    
 }
+
 
 .NavbarBrand{
     font-weight: bold;
@@ -21,9 +20,13 @@
     border: none;
     color: var(--color-text) !important;
 }
-
+.dropdown-item.active, .dropdown-item:active {
+    background: var(--primary-color) !important;
+    color: white !important;
+}
 .NavDropdownHeader{
-    color: var(--color-text-header) !important;
+    color: white!important;
+    font-weight: 500;
 }
 .NavDropdownItem{
     color: var(--color-text) !important;
@@ -55,20 +58,49 @@
 .CartWidget__desktop{
     display: none;
 }
+.Button__logout{
+    background: none;
+    border: none;
+    color: rgba(255,255,255,.55);
+    margin-right: 15px;
+    margin-left: 10px;
+    transition: .25s all ease-in-out;
+} 
+.Button__logout:hover{
+    color: white;
+}
 
 /* Tablets en horizonal y escritorios normales */
 @media (min-width: 768px) and (max-width: 1199px) { 
     .Container__CartWdiget{
         width: 70%;
     }
+
+    .dropdown-item.active, .dropdown-item:active {
+        background: white !important;
+        color: black !important;
+    }
+    .Button__logout{
+        text-align: left;
+        margin-left: 0;
+    } 
+
 }
 
 /* Móviles en horizontal o tablets en vertical */
 @media (max-width: 767px) { 
+    
     .Container__CartWdiget{
         width: 56%;
-       
     }
+    .dropdown-item.active, .dropdown-item:active {
+        background: white !important;
+        color: black !important;
+    }
+    .Button__logout{
+        text-align: left;
+        margin-left: 0;
+    } 
 
 }
 /* Móviles en vertical */
@@ -76,12 +108,14 @@
     .Container__CartWdiget{
         width: 34%;
     }
+    .Button__logout{
+        text-align: left;
+        margin-left: 0;
+    } 
 }
 /* EXTRA LARGE */
 @media (min-width: 1200px) { 
-    .Navbar{
-        overflow:visible;
-    }
+
     .dropdown-menu{
         background: var(--background-color-primary) !important;
     }
@@ -101,4 +135,9 @@
         align-items: center;
         cursor: pointer;
     }
+    .NavDropdownHeader{
+        color: rgb(0, 0, 0)!important;
+        font-weight: 500;
+    }
+    
  }
